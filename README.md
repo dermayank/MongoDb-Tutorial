@@ -2,11 +2,13 @@
 
 ### Starting & Stopping
 
-`$sudo service mongod start`	starts the mongodb server
+`$sudo service mongod start` starts the mongodb server
+
+`$sudo service mongod stop` stops the mongodb server
+
+`$sudo service mongod restart` restarts the mongodb server
 
 `$mongo`  starts the shell
-
-`$sudo service mongod stop` 	stops the mongodb server
 
 ---
 
