@@ -36,8 +36,8 @@
 
 **Options:** Specify options about memory size and indexing. This is an optional parameter.
 		
-		 Field |  Type	
-		 --- | ---	| ---	
+		 Field | Type	
+		 --- | --- | ---	
 		 capped | Boolean		
 		 autoIndexId | Boolean
 		 size | number
