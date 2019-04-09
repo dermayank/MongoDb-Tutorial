@@ -107,8 +107,8 @@
 | Greater than         |  {\<key>: {$gt:\<value>}}	|  db.ct_name.find({"age": {$gt: 50}).pretty()			|	age > 50		|
 | Greater than equals  |  {\<key>: {$gte:\<value>}}	|  db.ct_name.find({"age": {$gte:70}}).pretty()			|	age >= 50		|
 | Not Equals		   |  {\<key>: {$ne:\<value>}}	|  db.ct_name.find({"age": {$ne: 50}}).pretty()			|	age != 50		|
-| AND 				   |  {$and: [{\<key1>:value1},{\<key2>:\<value2>}]} | db.ct_name.find({$and:[{age:15},{likes:12}]).pretty()	|	age=15 and likes=12	|
-| OR 				   |  {$or: [{\<key1>:value1},{\<key2>:\<value2>}]}	| db.ct_name.find({$and:[{age:15},{likes:12}]).pretty() |	age=15 or likes=12	|
+| AND 				   |  {$and: [{\<key1>:value1},{\<key2>:\<value2>}]} | db.ct_name.find({$and: [{age:15},{likes:12}]).pretty()	|	age=15 and likes=12	|
+| OR 				   |  {$or: [{\<key1>:value1},{\<key2>:\<value2>}]}	| db.ct_name.find({$or: [{age:15},{likes:12}]).pretty() |	age=15 or likes=12	|
 
 ---
 
