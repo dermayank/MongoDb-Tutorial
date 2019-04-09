@@ -1,6 +1,6 @@
 # MongoDB-Tutorial
 
-###Starting & Stopping
+### Starting & Stopping
 
 `sudo service mongod start`	starts the mongodb server
 
@@ -8,6 +8,7 @@
 
 `sudo service mongod stop` 	stops the mongodb server
 
+---
 
 ### Basics
 
@@ -23,26 +24,31 @@
 
 `db.dropDatabase()` it will delete the current database
 
+---
 
-###Collections
+### Collections
 
-Collection is a group of MongoDB documents. It is the equivalent of an RDBMS table. A collection exists within a single database. Collections do not enforce a schema. Documents within a collection can have different fields.
+**Collection** is a group of MongoDB documents. It is the equivalent of an RDBMS table. A collection exists within a single database. Collections do not enforce a schema. Documents within a collection can have different fields.
 
 `db.createCollection(ct_name, options)` It creates a new collection with name as ct_name.
 
-options: Specify options about memory size and indexing. This is an optional parameter.
+---
+
+**Options:** Specify options about memory size and indexing. This is an optional parameter.
 		
-		Field           Type
-		capped     		Boolean
-		autoIndexId		Boolean
-		size			number
-		max				number
+		| Field         |  Type			|
+		| --------------|:-------------:|	
+		| capped     	|	Boolean		|
+		| autoIndexId	|	Boolean		|
+		| size			|	number		|
+		| max			|	number		|
 
 `show collections`	displays the list of all the available collections
 
 `db.COLLECTION_NAME.drop()` drops the collection with the name as COLLECTION_NAME
 
+---
 
-###Insertion 
+### Insertion 
 
 
