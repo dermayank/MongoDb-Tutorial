@@ -91,8 +91,9 @@
 				])
 		```
 
+---
 
-###Search
+### Search
 
 `>db.ct_name.find()`  will display all data in non-structured way. It is similar to *select * from table_name* query in sql.
 
@@ -100,7 +101,7 @@
 
 | Operation            | Syntax                     |Example 											| equivalent		|
 | -----------------   | ------------------------- | ------------------------------------------------ | ---------------- |
-| Equality             |  {<key>: <value>}          |  db.ct_name.find({"name": "mayank"}).pretty()		|   name = mayank	|
+| Equality             |  {\<key>: <value>}          |  db.ct_name.find({"name": "mayank"}).pretty()		|   name = mayank	|
 | Less than            |  {<key>: {$lt:<value>}}    |  db.ct_name.find({"age": {$lt: 100}}).pretty()	|	age < 100		|
 | Less than equals     |  {<key>: {$lte:<value>}}   |  db.ct_name.find({"age": {$lte: 10}}).pretty()	|	age <= 100		|
 | Greater than         |  {<key>: {$gt:<value>}}	|  db.ct_name.find({"age": {$gt: 50}).pretty()		|	age > 50		|
@@ -108,9 +109,9 @@
 | Not Equals		   |  {<key>: {$ne:<value>}}	|  db.ct_name.find({"age": {$ne: 50}}).pretty()		|	age != 50		|
 
 
+---
 
-
-###Update
+### Update
 
 Updation can be performed using *update()* and *save()* methods. *update()* method updates the value in existing documents while *save()* method replaces the existing documents with the one passed in save() method.
 
