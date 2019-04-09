@@ -35,13 +35,14 @@
 ---
 
 **Options:** Specify options about memory size and indexing. This is an optional parameter.
+
+					| Field         | Type     |
+					| ------------- | -------- |
+					| capped        | Boolean  |
+					| autoIndexID   | Boolean  |
+					| size		    | number   |
+					| max           | number   |
 		
-		 Field | Type	
-		 :---: | --- | ---	
-		 capped | Boolean		
-		 autoIndexId | Boolean
-		 size | number
-		 max | number
 
 `show collections`	displays the list of all the available collections
 
@@ -51,8 +52,4 @@
 
 ### Insertion 
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
 
