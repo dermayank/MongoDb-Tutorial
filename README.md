@@ -36,12 +36,12 @@
 
 **Options:** Specify options about memory size and indexing. This is an optional parameter.
 
-					| Field         | Type     |
-					| ------------- | -------- |
-					| capped        | Boolean  |
-					| autoIndexID   | Boolean  |
-					| size          | number   |
-					| max           | number   |
+	| Field         | Type     |
+	| ------------- | -------- |
+	| capped        | Boolean  |
+	| autoIndexID   | Boolean  |
+	| size          | number   |
+	| max           | number   |
 		
 
 `>show collections`	displays the list of all the available collections
@@ -57,7 +57,7 @@
 
 		**Example of single document insertion in mongodb**
 		```
-				db.mycol.insert({
+			   >db.mycol.insert({
 				   _id: ObjectId(7df78ad8902c),
 				   title: 'MongoDB single query', 
 				   description: 'MongoDB is no sql database',
@@ -67,7 +67,7 @@
 
 		**Example of multiple document insertion in mongodb**
 		```
-				db.mycol.insert([
+			      >db.mycol.insert([
 				   {
 				      title: 'MongoDB Overview', 
 				      description: 'MongoDB is no sql database',
