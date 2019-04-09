@@ -125,6 +125,9 @@
 					]
 				}).pretty()
 		'''
+
+For searching in sub documents we use `.` operator. Ex: find({\< document.subdocument >:\< value >"})
+
 ---
 
 ### Update
