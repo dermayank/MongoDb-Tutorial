@@ -37,7 +37,7 @@
 **Options:** Specify options about memory size and indexing. This is an optional parameter.
 		
 		 Field | Type	
-		 --- | --- | ---	
+		 :---: | --- | ---	
 		 capped | Boolean		
 		 autoIndexId | Boolean
 		 size | number
@@ -51,4 +51,8 @@
 
 ### Insertion 
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
