@@ -99,7 +99,7 @@
 `>db.ct_name.find().pretty()` will display all data just like above but in strucutred way.
 
 | Operation            | Syntax                     |Example 											| equivalent		|
-| *-----------------   | *------------------------- | *------------------------------------------------ | *---------------- |
+| -----------------   | ------------------------- | ------------------------------------------------ | ---------------- |
 | Equality             |  {<key>: <value>}          |  db.ct_name.find({"name": "mayank"}).pretty()		|   name = mayank	|
 | Less than            |  {<key>: {$lt:<value>}}    |  db.ct_name.find({"age": {$lt: 100}}).pretty()	|	age < 100		|
 | Less than equals     |  {<key>: {$lte:<value>}}   |  db.ct_name.find({"age": {$lte: 10}}).pretty()	|	age <= 100		|
