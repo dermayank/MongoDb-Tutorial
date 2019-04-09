@@ -99,15 +99,16 @@
 
 `>db.ct_name.find().pretty()` will display all data just like above but in strucutred way.
 
-| Operation            | Syntax                     |Example 											| equivalent		|
-| -----------------   | ------------------------- | ------------------------------------------------ | ---------------- |
+| Operation            | Syntax                     |Example 												| Equivalent		|
+| -------------------  | ------------------------- | ------------------------------------------------ 		| ---------------- |
 | Equality             |  {\<key>: \<value>}          |  db.ct_name.find({"name": "mayank"}).pretty()		|   name = mayank	|
-| Less than            |  {\<key>: {$lt:\<value>}}    |  db.ct_name.find({"age": {$lt: 100}}).pretty()	|	age < 100		|
-| Less than equals     |  {\<key>: {$lte:\<value>}}   |  db.ct_name.find({"age": {$lte: 10}}).pretty()	|	age <= 100		|
-| Greater than         |  {\<key>: {$gt:\<value>}}	|  db.ct_name.find({"age": {$gt: 50}).pretty()		|	age > 50		|
-| Greater than equals  |  {\<key>: {$gte:\<value>}}	|  db.ct_name.find({"age": {$gte:70}}).pretty()		|	age >= 50		|
-| Not Equals		   |  {\<key>: {$ne:\<value>}}	|  db.ct_name.find({"age": {$ne: 50}}).pretty()		|	age != 50		|
-
+| Less than            |  {\<key>: {$lt:\<value>}}    |  db.ct_name.find({"age": {$lt: 100}}).pretty()		|	age < 100		|
+| Less than equals     |  {\<key>: {$lte:\<value>}}   |  db.ct_name.find({"age": {$lte: 10}}).pretty()		|	age <= 100		|
+| Greater than         |  {\<key>: {$gt:\<value>}}	|  db.ct_name.find({"age": {$gt: 50}).pretty()			|	age > 50		|
+| Greater than equals  |  {\<key>: {$gte:\<value>}}	|  db.ct_name.find({"age": {$gte:70}}).pretty()			|	age >= 50		|
+| Not Equals		   |  {\<key>: {$ne:\<value>}}	|  db.ct_name.find({"age": {$ne: 50}}).pretty()			|	age != 50		|
+| AND 				   |  {$and: [{\<key1>:value1},{\<key2>:\<value2>}]} | db.ct_name.find({$and:[{age:15},{likes:12}]).pretty()	|	age=15 and likes=12	|
+| OR 				   |  {$or: [{\<key1>:value1},{\<key2>:\<value2>}]}	| db.ct_name.find({$and:[{age:15},{likes:12}]).pretty() |	age=15 or likes=12	|
 
 ---
 
