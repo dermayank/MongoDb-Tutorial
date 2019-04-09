@@ -40,7 +40,7 @@
 					| ------------- | -------- |
 					| capped        | Boolean  |
 					| autoIndexID   | Boolean  |
-					| size		    | number   |
+					| size          | number   |
 					| max           | number   |
 		
 
@@ -51,5 +51,6 @@
 ---
 
 ### Insertion 
+
 
 
