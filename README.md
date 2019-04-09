@@ -12,7 +12,7 @@
 
 ### Basics
 
-`>db.help()`	returns the lists of command
+`>db.help()` returns the lists of command
 
 `>db.stats()` returns the stats about the MongoDB client. 
 
@@ -32,12 +32,11 @@
 
 `>db.createCollection(ct_name, options)` It creates a new collection with name as ct_name.
 
----
 
 **Options:** Specify options about memory size and indexing. This is an optional parameter.
 
 | Field         | Type     |
-| ------------- | -------- |
+| *------------ | *-------- |
 | capped        | Boolean  |
 | autoIndexID   | Boolean  |
 | size          | number   |
@@ -46,16 +45,16 @@
 
 `>show collections`	displays the list of all the available collections
 
-`>db.COLLECTION_NAME.drop()` drops the collection with the name as COLLECTION_NAME
+`>db.ct_name.drop()` drops the collection with the name as *ct_name*
 
 ---
 
 ### Insertion 
 
-`>db.COLLECTION_NAME.insert(document)`  inserts the document into the collection COLLECTION_NAME. We can pass a single document or an array of document in a query. 											\_id is optional, but is specifed must be unique for every document.  
+`>db.ct_name.insert(document)`  inserts the document into the collection *ct_name*. We can pass a single document or an array of document in a query. 											\_id is optional, but is specifed must be unique for every document.  
 	
 
-		**Example of single document insertion in mongodb**
+		Example of single document insertion in mongodb
 		```
 			   >db.mycol.insert({
 				   _id: ObjectId(7df78ad8902c),
@@ -65,7 +64,7 @@
 				})
 		```
 
-		**Example of multiple document insertion in mongodb**
+		Example of multiple document insertion in mongodb
 		```
 			      >db.mycol.insert([
 				   {
@@ -93,3 +92,26 @@
 		```
 
 
+###Search
+
+`>db.ct_name.find()`  will display all data in non-structured way. It is similar to *select * from table_name* query in sql.
+
+`>db.ct_name.find().pretty()` will display all data just like above but in strucutred way.
+
+| Operation            | Syntax                     |Example 											| equivalent		|
+| *-----------------   | *------------------------- | *------------------------------------------------ | *---------------- |
+| Equality             |  {<key>: <value>}          |  db.ct_name.find({"name": "mayank"}).pretty()		|   name = mayank	|
+| Less than            |  {<key>: {$lt:<value>}}    |  db.ct_name.find({"age": {$lt: 100}}).pretty()	|	age < 100		|
+| Less than equals     |  {<key>: {$lte:<value>}}   |  db.ct_name.find({"age": {$lte: 10}}).pretty()	|	age <= 100		|
+| Greater than         |  {<key>: {$gt:<value>}}	|  db.ct_name.find({"age": {$gt: 50}).pretty()		|	age > 50		|
+| Greater than equals  |  {<key>: {$gte:<value>}}	|  db.ct_name.find({"age": {$gte:70}}).pretty()		|	age >= 50		|
+| Not Equals		   |  {<key>: {$ne:<value>}}	|  db.ct_name.find({"age": {$ne: 50}}).pretty()		|	age != 50		|
+
+
+
+
+###Update
+
+Updation can be performed using *update()* and *save()* methods. *update()* method updates the value in existing documents while *save()* method replaces the existing documents with the one passed in save() method.
+
+`>db.ct_name.update(SELECTION_CRITERIA, UPDATED_DATA)`	
