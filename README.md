@@ -28,7 +28,7 @@
 
 ### Collections
 
-**Collection** is a group of MongoDB documents. It is the equivalent of an RDBMS table. A collection exists within a single database. Collections do not enforce a schema. Documents within a collection can have different fields.
+**Collections:** is a group of MongoDB documents. It is the equivalent of an RDBMS table. A collection exists within a single database. Collections do not enforce a schema. Documents within a collection can have different fields.
 
 `>db.createCollection(ct_name, options)` It creates a new collection with name as ct_name.
 
@@ -99,21 +99,50 @@
 
 `>db.ct_name.find().pretty()` will display all data just like above but in strucutred way.
 
+\_id  will always be displayed with the find operation. To disable it, we need to set it to 0. Ex: *db.ct_name.find({},{_id=0}).pretty()*
+
 | Operation            | Syntax                     |Example 												| Equivalent		|
 | -------------------  | ------------------------- | ------------------------------------------------ 		| ---------------- |
 | Equality             |  {\<key>: \<value>}          |  db.ct_name.find({"name": "mayank"}).pretty()		|   name = mayank	|
-| Less than            |  {\<key>: {$lt:\<value>}}    |  db.ct_name.find({"age": {$lt: 100}}).pretty()		|	age < 100		|
-| Less than equals     |  {\<key>: {$lte:\<value>}}   |  db.ct_name.find({"age": {$lte: 10}}).pretty()		|	age <= 100		|
-| Greater than         |  {\<key>: {$gt:\<value>}}	|  db.ct_name.find({"age": {$gt: 50}).pretty()			|	age > 50		|
-| Greater than equals  |  {\<key>: {$gte:\<value>}}	|  db.ct_name.find({"age": {$gte:70}}).pretty()			|	age >= 50		|
-| Not Equals		   |  {\<key>: {$ne:\<value>}}	|  db.ct_name.find({"age": {$ne: 50}}).pretty()			|	age != 50		|
-| AND 				   |  {$and: [{\<key1>:value1},{\<key2>:\<value2>}]} | db.ct_name.find({$and: [{age:15},{likes:12}]).pretty()	|	age=15 and likes=12	|
-| OR 				   |  {$or: [{\<key1>:value1},{\<key2>:\<value2>}]}	| db.ct_name.find({$or: [{age:15},{likes:12}]).pretty() |	age=15 or likes=12	|
+| Less than            |  {\<key>: {$lt: \<value>}}    |  db.ct_name.find({"age": {$lt: 100}}).pretty()		|	age < 100		|
+| Less than equals     |  {\<key>: {$lte: \<value>}}   |  db.ct_name.find({"age": {$lte: 10}}).pretty()		|	age <= 100		|
+| Greater than         |  {\<key>: {$gt: \<value>}}	|  db.ct_name.find({"age": {$gt: 50}).pretty()			|	age > 50		|
+| Greater than equals  |  {\<key>: {$gte: \<value>}}	|  db.ct_name.find({"age": {$gte:70}}).pretty()			|	age >= 50		|
+| Not Equals		   |  {\<key>: {$ne: \<value>}}	|  db.ct_name.find({"age": {$ne: 50}}).pretty()			|	age != 50		|
+| AND 				   |  {$and: [{\<key1>: \<value1>},{\<key2>: \<value2>}]} | db.ct_name.find({$and: [{age:15},{likes:12}]).pretty()	|	age=15 and likes=12	|
+| OR 				   |  {$or: [{\<key1>: \<value1>},{\<key2>: \<value2>}]}	| db.ct_name.find({$or: [{age:15},{likes:12}]).pretty() |	age=15 or likes=12	|
 
+
+		'''
+			Select documet with either (name = mayank) or (time =1 and tags = 3)
+				>db.test_db.find({$or:
+					[{name:"mayank"},{
+						$and:[{"time":1},
+						{tags:3}]
+						}
+					]
+				}).pretty()
+		'''
 ---
 
 ### Update
 
-Updation can be performed using *update()* and *save()* methods. *update()* method updates the value in existing documents while *save()* method replaces the existing documents with the one passed in save() method.
+`>db.ct_name.update(selection_criteria, updation_criteria)`	updation can be performed using *update()* and *save()* methods. *update()* method updates the value in existing documents while *save()* method replaces the existing documents with the one passed in save() method.
 
-`>db.ct_name.update(SELECTION_CRITERIA, UPDATED_DATA)`	
+We always specify `$set` in updation criteria. The `$set` operator replaces the value of a field with the specified value.
+
+		'''
+			Updates the parameter age with value 22
+			 >db.test_db.update({"name":"mayank joshi"},
+			 		{$set:{"age":22}
+			 	},{multi:true})
+
+			 Adds and additional value address with value to the record matching the name parameter as "mayank joshi"
+			 >db.test_db.update({"name":"mayank joshi"},
+			 		{$set:{"address":"newly added address"}
+			 	})
+		''' 
+
+By default the `update()` operation will only update a single document or record. To update multiple the documents we need to set parameter `multi` to *true*
+
+
